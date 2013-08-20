@@ -77,4 +77,13 @@ Or from the example code, compiled with Google Closure (https://developers.googl
 730:    return val !== undefined;                                  |  void 0
 ```
 
+Using the `counts.js` you can see a breakdown of the origin of characters in the compiled code.
+```
+> node counts.js example-code/ example-code/build/test-sourcemap.js example-code/build/test.js.map
+152	../closure-library/closure/goog/base.js
+43	example-code/test.js
+21	example-code/common.js
+1	[ Compiler Generated Source ]
+```
+
 Note: The compiled code shown on the right is not verbatim. It's a concatenated string of all the compiled code bits that reference the source line in question.
