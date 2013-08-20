@@ -47,4 +47,34 @@ Or from http://underscorejs.org/:
 37:       nativeReduceRight  = ArrayProto.reduceRight,                 |  h=e.reduceRight,
 ```
 
+Or from the example code, compiled with Google Closure (https://developers.google.com/closure/):
+```
+> node compare.js example-code/ example-code/build/test-sourcemap.js example-code/build/test.js.map
+
+================= example-code/test.js ================
+
+9:    test.entryPoint = function() {                               |  function a(){}
+10:       test.testMethod('http://www.google.com');                |  "http://www.google.com"
+13:   goog.exportSymbol('test', test.entryPoint);                  |  "test"
+
+================= example-code/common.js ================
+
+4:        window.location.href = url;                              |  window.location.href=
+
+================= ../closure-library/closure/goog/base.js ================
+
+45:   goog.global = this;                                          |  this
+159:    var parts = name.split('.');                               |  var b=[],
+160:    var cur = opt_objectToExportTo || goog.global;             |  c=
+165:    if (!(parts[0] in cur) && cur.execScript) {                |  ;!(b[0]in c)&&c.execScript&&
+166:      cur.execScript('var ' + parts[0]);                       |  c.execScript("var "+b[0])
+175:    for (var part; parts.length && (part = parts.shift());) {  |  ;for(var d;b.length&&(d=b.shift());)
+176:      if (!parts.length && goog.isDef(opt_object)) {           |  !b.length&&!==a?=:=
+178:        cur[part] = opt_object;                                |  c[d]a
+179:      } else if (cur[part]) {                                  |  c[d]?:=
+180:        cur = cur[part];                                       |  c[d]
+182:        cur = cur[part] = {};                                  |  c[d]{}
+730:    return val !== undefined;                                  |  void 0
+```
+
 Note: The compiled code shown on the right is not verbatim. It's a concatenated string of all the compiled code bits that reference the source line in question.
