@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var sourcemap = require('source-map');
+var sourcemap = require('source-map'); // https://github.com/mozilla/source-map/
 var path = require('path');
 
 if (process.argv.length != 5) {
