@@ -1,4 +1,6 @@
-Compare compiled jQuery against source (http://jquery.com/download/). Grab all the source files. In jQuery's case, they have compiled it as a single file.
+Allows directly comparing JS source to its compiled form. I use it to minimize compiled output. It's also pretty neat to see.
+
+For example, to compare compiled jQuery against source (http://jquery.com/download/). Grab all the source files. In jQuery's case, they have compiled it as a single file.
 +   jquery.js (development)
 +   jquery.min.js (production)
 +   jquery.min.map (source map)
