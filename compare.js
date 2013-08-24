@@ -76,7 +76,7 @@ for (var j = 0; j < consumer._generatedMappings.length; ++j) {
 }
 
 // String cleaning
-var maxPadding = 90;
+var maxPadding = 70;
 var padding = Array(maxPadding).join(' ');
 var pad = function(text, length) {
     return text + padding.substring(maxPadding - length + text.length);
@@ -104,7 +104,7 @@ var wrapTogether = function(lineno, codeL, codeR) {
         var padding = (i === 0 ? lineStr : prefixPadding);
         var leftLine = leftLines[i] || linePadding;
         var rightLine = rightLines[i] || linePadding;
-        text += padding + leftLine + '  |  ' + rightLine;
+        text += padding + leftLine + (i < max - 1 ? ' ' : '  ') + ' |  ' + rightLine;
         if (i !== max - 1) {
             text += '\n';
         }
